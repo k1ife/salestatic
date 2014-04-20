@@ -5,18 +5,15 @@ $url = explode("/", $url);
 unset($url[0]);
 
 switch ($url[1]) {
-case "yola":			require_once('../-yola/typo3conf/localconf.php');			$domain = "skidki-yola.ru";break;
-#case "yola2":			require_once('../-yola-spam/typo3conf/localconf.php');		$domain = "skidki-yola.ru";break;
-
-case "kirov":			require_once('../-kirov/typo3conf/localconf.php');			$domain = "skidki-kirov.ru";break;
-case "astrachan":		require_once('../-astrachan/typo3conf/localconf.php');		$domain = "ast-online.ru";break;
-case "kemerovo":		require_once('../-kemerovo/typo3conf/localconf.php');		$domain = "online-km.ru";break;
-case "chita":   		require_once('../-chita/typo3conf/localconf.php');			$domain = "online-chita.ru";break;
-#case "ufa":   			require_once('../-ufa/typo3conf/localconf.php');			$domain = "vseknam-ufa.ru";break;
-case "irkutsk":   		require_once('../-irkutsk/typo3conf/localconf.php');		$domain = "topsale38.ru";break;
-case "saratov":   		require_once('../-saratov/typo3conf/localconf.php');		$domain = "region-saratov.ru";break;
-case "sakhalin":   		require_once('../-sakhalin/typo3conf/localconf.php');		$domain = "sakh-line.ru";break;
-case "yakutsk":   		require_once('../-yakutsk/typo3conf/localconf.php');		$domain = "region-ykt.ru";break;
+case "yola":			require_once('../-yola/typo3conf/localconf.php');break;
+case "kirov":			require_once('../-kirov/typo3conf/localconf.php');break;
+case "astrachan":		require_once('../-astrachan/typo3conf/localconf.php');break;
+case "kemerovo":		require_once('../-kemerovo/typo3conf/localconf.php');break;
+case "chita":   		require_once('../-chita/typo3conf/localconf.php');break;
+case "irkutsk":   		require_once('../-irkutsk/typo3conf/localconf.php');break;
+case "saratov":   		require_once('../-saratov/typo3conf/localconf.php');break;
+case "sakhalin":   		require_once('../-sakhalin/typo3conf/localconf.php');break;
+case "yakutsk":   		require_once('../-yakutsk/typo3conf/localconf.php');break;
 default:					header('Location: /404.html');exit();break;
 }
 date_default_timezone_set($TYPO3_CONF_VARS['SYS']['phpTimeZone']);
@@ -417,44 +414,7 @@ case "StartCronSpamSendYGH73HF7HWND77WFJFU8":
 	
 	$cache = new RedisCache();
 	if ( $url[1] == 'yola' ) {
-		$mails = array(
-		'vbhhbv@yandex.ru'
-		,'adyabadyababoo@gmail.com'
-		,'antipina.len2010@yandex.ru'
-		,'anutka295@mail.ru'
-		,'ashko1811@yandex.ru'
-		,'avrora-cat1376@mail.ru'
-		,'black.pearl.777@yandex.com'
-		,'caliqa@yandex.ru'
-		,'fiediakova94@mail.ru'
-		,'iagodkina@list.ru'
-		,'irina9264362526@yandex.ru'
-		,'karmen2585@mail.ru'
-		,'kate-11@inbox.ru'
-		,'kiddo8805@yandex.ru'
-		,'koshka131koshka@gmail.com'
-		,'laly31@mail.ru'
-		,'maksimilyana91@mail.ru'
-		,'malibu-12@mail.ru'
-		,'marusia6560@mail.ru'
-		,'maryeling13@mail.ru'
-		,'minaiezudin@gmail.com'
-		,'oksanav1967@mail.ru'
-		,'palett@inbox.ru'
-		,'pavlovs23@mail.ru'
-		,'s.chemodan@qmail.com'
-		,'scratch90@mail.ru'
-		,'skflagman@list.ru'
-		,'soldat__1988@mail.ru'
-		,'stolbova86@inbox.ru'
-		,'svetlana-7112@mail.ru'
-		,'svikuliya1987@front.ru'
-		,'tanushka_193@mail.ru'
-		,'vclass70@mail.ru'
-		,'vesnaa13@mail.ru'
-		,'yadyckova@yandex.ru'
-		,'fork1ife@gmail.com'
-	);
+		$mails = $Users_mails;
 	} else {
 		$mails = $cache -> hGetAll($url[1].":UsersAllowSpam");
 	}
@@ -486,11 +446,11 @@ case "StartSendSpamType1":
 		$contento = str_replace('{site_name}',$TYPO3_CONF_VARS['SYS']['sitename'],$contento);
 		$contento = str_replace('{site_link}',$domain,$contento);
 		$blocks = '<tr><td><div style="padding: 0px 15px;">
-					<p>Приведи своих друзей на страничку конкурса на skidki-yola.ru.</p>
+					<p>Приведи своих друзей на страничку конкурса на '.$domain.'.</p>
 					<p>Выиграй бонусную  карту  ГОРОДА СКИДОК.</p>
 					<p>На ней уже начислены 3400 бонусов. 1 бонус=1 рубль.</p>
 					<p>Только первым 50 участникам, кто больше всех приведет посетителей на страничку.</p>
-					<p>Приди и потрать их. <a href="http://skidki-yola.ru/prize/index.php?id='.$key.'&id_project=3" style="color: #3990b7;">Ваша персональная ссылка</a>.</p>
+					<p>Приди и потрать их. <a href="http://'.$domain.'/prize/index.php?id='.$key.'&id_project=3" style="color: #3990b7;">Ваша персональная ссылка</a>.</p>
 					</div></td></tr>';
 		$contento = str_replace('{blocks}',$blocks,$contento);
 		$creator = new GearMan();
@@ -655,7 +615,7 @@ case "GetFooterMenu":
                 'users_km'  =>'<li><a href="http://'.$domain.'/o-nas/polzovateljam/">Пользователям</a></li>',
                 
                 'main'      =>'<li><a href="http://'.$domain.'/">Главная</a></li>',
-                'sms'       =>'<li><a href="http://sms.skidki-yola.ru/">СМС</a></li>',
+                'sms'       =>'<li><a href="http://sms.'.$domain_yola.'/">СМС</a></li>',
                 'otzyvi'    =>'<li><a href="http://'.$domain.'/sait/otzyvy/">Отзывы о нас</a></li>',
                 'sitemap'   =>'<li><a href="http://'.$domain.'/sait/karta-saita/">Карта сайта</a></li>',
                 
