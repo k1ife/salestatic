@@ -572,31 +572,31 @@ case "GetHeadMenu":
         
     switch ($url[1]) {
         case "yola":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "kirov":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['konkurs'] . $aM['afisha'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['konkurs'] . $aM['afisha'];break;
         
         case "astrachan":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "kemerovo":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "chita":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "irkutsk":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "saratov":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'];break;
         
         case "sakhalin":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'];break;
         
         case "yakutsk": 
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'] . $aM['user'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'];break;
         }
         
         echo $_GET['callback']."(".json_fix_cyr(json_encode($result)).");";
@@ -615,7 +615,7 @@ case "GetFooterMenu":
                 'users_km'  =>'<li><a href="http://'.$domain.'/o-nas/polzovateljam/">Пользователям</a></li>',
                 
                 'main'      =>'<li><a href="http://'.$domain.'/">Главная</a></li>',
-                'sms'       =>'<li><a href="http://sms.'.$domain_yola.'/">СМС</a></li>',
+                'sms'       =>'<li><a href="http://sms.skidki-yola/">СМС</a></li>',
                 'otzyvi'    =>'<li><a href="http://'.$domain.'/sait/otzyvy/">Отзывы о нас</a></li>',
                 'sitemap'   =>'<li><a href="http://'.$domain.'/sait/karta-saita/">Карта сайта</a></li>',
                 
