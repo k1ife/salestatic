@@ -5,15 +5,15 @@ $url = explode("/", $url);
 unset($url[0]);
 
 switch ($url[1]) {
-case "yola":			require_once('../-yola/typo3conf/localconf.php');break;
-case "kirov":			require_once('../-kirov/typo3conf/localconf.php');break;
+case "yola":			  require_once('../-yola/typo3conf/localconf.php');     break;
+case "kirov":		  	require_once('../-kirov/typo3conf/localconf.php');    break;
 case "astrachan":		require_once('../-astrachan/typo3conf/localconf.php');break;
-case "kemerovo":		require_once('../-kemerovo/typo3conf/localconf.php');break;
-case "chita":   		require_once('../-chita/typo3conf/localconf.php');break;
-case "irkutsk":   		require_once('../-irkutsk/typo3conf/localconf.php');break;
-case "saratov":   		require_once('../-saratov/typo3conf/localconf.php');break;
-case "sakhalin":   		require_once('../-sakhalin/typo3conf/localconf.php');break;
-case "yakutsk":   		require_once('../-yakutsk/typo3conf/localconf.php');break;
+case "kemerovo":		require_once('../-kemerovo/typo3conf/localconf.php'); break;
+case "chita":   		require_once('../-chita/typo3conf/localconf.php');    break;
+case "irkutsk":   	require_once('../-irkutsk/typo3conf/localconf.php');  break;
+case "saratov":   	require_once('../-saratov/typo3conf/localconf.php');  break;
+case "sakhalin":   	require_once('../-sakhalin/typo3conf/localconf.php'); break;
+case "yakutsk":   	require_once('../-yakutsk/typo3conf/localconf.php');  break;
 default:					header('Location: /404.html');exit();break;
 }
 date_default_timezone_set($TYPO3_CONF_VARS['SYS']['phpTimeZone']);
@@ -640,7 +640,7 @@ case "GetFooterMenu":
             $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['otzyvi'] . $aM['rss'] . $aM['vk_yola'];break;
             
             case "kirov":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['links' . $aM['rss']];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['links'] . $aM['rss'];break;
             
             case "astrachan":
             $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_ast'] . $aM['rss'];break;
@@ -649,7 +649,7 @@ case "GetFooterMenu":
             $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users_km'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
             
             case "chita":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['links'] . $aM['rss'];break;
             
             case "irkutsk":
             $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
