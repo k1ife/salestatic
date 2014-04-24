@@ -615,7 +615,7 @@ case "GetFooterMenu":
                 'users_km'  =>'<li><a href="http://'.$domain.'/o-nas/polzovateljam/">Пользователям</a></li>',
                 
                 'main'      =>'<li><a href="http://'.$domain.'/">Главная</a></li>',
-                'sms'       =>'<li><a href="http://sms.skidki-yola/">СМС</a></li>',
+                'sms'       =>'<li><a href="http://sms.skidki-yola.ru/">СМС</a></li>',
                 'otzyvi'    =>'<li><a href="http://'.$domain.'/sait/otzyvy/">Отзывы о нас</a></li>',
                 'sitemap'   =>'<li><a href="http://'.$domain.'/sait/karta-saita/">Карта сайта</a></li>',
                 
