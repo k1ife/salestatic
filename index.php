@@ -607,7 +607,7 @@ case "GetFooterMenu":
         require_once('include/RedisCache.php');
         
         $aM = array(
-                'about_us'  =>'<li><a href="http://'.$domain.'/o-nas/">О нас</a></li>',
+                'about_us'  =>'<li><a href="http://'.$domain.'/sait/">О нас</a></li>',
                 'contacts'  =>'<li><a href="http://'.$domain.'/sait/kontakty/">Контакты</a></li>',
                 'advert'    =>'<li><a href="http://'.$domain.'/sait/reklamodateljam/">Рекламодателям</a></li>',
                 
