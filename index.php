@@ -669,6 +669,50 @@ case "GetFooterMenu":
         //echo $result;
     break;
 	
+case "company_register":
+
+	require_once('include/RedisCache.php');
+  
+  # получаем логин и пароль
+  # проверяем есть ли такой логин-пароль в редиске
+  # если логина с паролем нет - записываем нового пользователя и возвращаем ему уникальный ключ, проверяем входные данные и сохраняем в мускул
+  # если логин-пароль есть в редиске - генерим ключ, записываем в редиску и выдаем пользователю
+  
+  $login = $url[3];
+  $pass = $url[4];
+  $key = md5(uniqid(rand(1,999), true));
+  $result =  Array("login" => $login, "pass" => $pass, "key" => $key);
+  echo $_GET['callback']."(".json_fix_cyr(json_encode($result)).");";
+	break;
+  
+case "company_login":
+
+	require_once('include/RedisCache.php');
+  
+  # получаем логин и пароль
+  # проверяем есть ли такой логин-пароль в редиске
+  # если логина с паролем нет - импортируем всех пользователей из мускула и снова смотрим, если всё равно нет - шлем лесом
+  # если логин-пароль есть в редиске - генерим ключ - высылаем форму добавления скидок
+  
+	
+  $login = $url[3];
+  $pass = $url[4];
+  $key = md5(uniqid(rand(1,999), true));
+  $result =  Array("login" => $login, "pass" => $pass, "key" => $key);
+  echo $_GET['callback']."(".json_fix_cyr(json_encode($result)).");";
+	break;
+  
+case "company_data":
+
+	require_once('include/RedisCache.php');
+  
+  # проверяем есть ли такой логин-пароль в редиске
+  # если ключа нет - шлем лесом
+  # если ключ есть - проверяем входные данные и отправляем менеджеру
+  
+	echo date('y.m.d H.i.s', strtotime('now'));
+	break;
+  
 default:				header('Location: /404.html');exit();break;
 }
 
