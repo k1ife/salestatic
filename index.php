@@ -554,7 +554,7 @@ case "GetHeadMenu":
                 'map'       =>'<li><a href="http://'.$domain.'/karta/">Карта</a></li>',
                 'news'      =>'<li><a href="http://'.$domain.'/novosti/">Новости</a></li>',
                 'allSales'  =>'<li><a href="http://'.$domain.'/sait/rasshirennyi-poisk/vse-skidki/">Все скидки</a></li>',
-                
+                'allSales_yola' =>'<li><a href="http://'.$domain.'/sait/rasshirennyi-poisk/vse-razdely/">Все скидки</a></li>', 
                 'club'  =>'<li><a href="http://club.'.$domain.'">Дисконтный клуб</a></li>',
                 
                 'gifts'     =>'<li><a href="http://podarki.'.$domain.'/">Подарки</a></li>',
@@ -572,7 +572,7 @@ case "GetHeadMenu":
         
     switch ($url[1]) {
         case "yola":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales_yola'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "kirov":
         $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['konkurs'] . $aM['afisha'];break;
