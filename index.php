@@ -413,8 +413,8 @@ case "StartCronSpamSendYGH73HF7HWND77WFJFU8":
 	$contento = str_replace('{date_end}',date("d", $date_end)." ".$month[date("m", $date_end)],$contento);
 	
 	$cache = new RedisCache();
-	if ( $url[1] == 'yola' ) {
-		$mails = $Users_mails;
+	if ( $url[1] == 'poipoi' ) {
+		$mails = $Users_mails_test;
 	} else {
 		$mails = $cache -> hGetAll($url[1].":UsersAllowSpam");
 	}
@@ -590,13 +590,13 @@ case "GetHeadMenu":
         $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "saratov":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['konkurs']. $aM['afisha'];break;
         
         case "sakhalin":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['konkurs']. $aM['afisha'];break;
         
         case "yakutsk": 
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts'] . $aM['doska'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['konkurs']. $aM['afisha'];break;
         }
         
         echo $_GET['callback']."(".json_fix_cyr(json_encode($result)).");";

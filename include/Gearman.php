@@ -77,7 +77,7 @@ class GearMan {
 		$contento = str_replace('{date_start}',date("d", $date_start)." ".$month[date("m", $date_start)],$contento);
 		$contento = str_replace('{date_end}',date("d", $date_end)." ".$month[date("m", $date_end)],$contento);
 		
-		$result = mysql_query("SELECT * FROM tt_news LEFT JOIN tt_news_cat_mm ON tt_news.uid=tt_news_cat_mm.uid_local WHERE tt_news_cat_mm.uid_foreign != 10 AND tt_news.hidden = 0 AND tt_news.deleted = 0 AND tt_news.ext_url != '' AND tt_news.crdate > '$date_end' AND tt_news.crdate < '$date_start'");
+		$result = mysql_query("SELECT * FROM tt_news LEFT JOIN tt_news_cat_mm ON tt_news.uid=tt_news_cat_mm.uid_local WHERE tt_news_cat_mm.uid_foreign != 10 AND tt_news.hidden = 0 AND tt_news.deleted = 0 AND tt_news.crdate > '$date_end' AND tt_news.crdate < '$date_start'");
 		while($row = mysql_fetch_array($result))
 		{
 			$results[$row['title']] = array('text' => $row['short'], 'link' => $row['ext_url'], 'findate' => date('m.d', $row['endtime']), 'saletype' => $row['tx_ttnewsfield_linktitle'], 'saletime' => $row['tx_ttnewssaletime_saletime'], 'newprice' => $row['tx_ttnewsnewprice_newprice'], 'percent' => $row['tx_ttnewspercent_percent']);
