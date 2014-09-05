@@ -198,10 +198,10 @@ class PHPMailer {
   public $Host          = 'localhost';
 
   /**
-   * Sets the default SMTP server port.
+   * Sets the default SMTP server port. !МАХНУЛ ПОРТ НА 465
    * @var int
    */
-  public $Port          = 25;
+  public $Port          = 465;
 
   /**
    * Sets the SMTP HELO of the message (Default is $Hostname).
@@ -214,7 +214,7 @@ class PHPMailer {
    * Options are "", "ssl" or "tls"
    * @var string
    */
-  public $SMTPSecure    = '';
+  public $SMTPSecure    = 'tls';
 
   /**
    * Sets SMTP authentication. Utilizes the Username and Password variables.
