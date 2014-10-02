@@ -413,24 +413,91 @@ case "StartCronSpamSendYGH73HF7HWND77WFJFU8":
 	$contento = str_replace('{date_end}',date("d", $date_end)." ".$month[date("m", $date_end)],$contento);
 	
 	$cache = new RedisCache();
-	if ( $url[1] == 'poipoi' ) {
+	if ( $url[1] == 'yola' ) {
 		$mails = $Users_mails_test;
 	} else {
 		$mails = $cache -> hGetAll($url[1].":UsersAllowSpam");
 	}
+  
+  $neversendout = array(
+    "westa@mail.ru"
+    ,"ew250296@mail.ru"
+    ,"belosnegka@mail.ru"
+    ,"lelik199696@mail.ru"
+    ,"elya1998-02@list.ru"
+    ,"milka23_95@mail.ru"
+    ,"galina-bukreeva0@rambler.ru"
+    ,"keti-151294@mail.ru"
+    ,"elya1998-02@mail.ru"
+    ,"tanyvolochuk@mail.ru"
+    ,"171717@mail.ru"
+    ,"dreamskyym@mail.ru"
+    ,"fff@yandex.ru"
+    ,"nafanya@mail.ru"
+    ,"slava.epif@maill.ru"
+    ,"minina.valera@mai.ru"
+    ,"setkaks05@gmail.com"
+    ,"test2@yandex.ru"
+    ,"test5@yandex.ru"
+    ,"qwe@qwe.com"
+    ,"test8@yandex.ru"
+    ,"qwe@qweqweqwe.com"
+    ,"123@123.com"
+    ,"user1@fakemail.com"
+    ,"123@123.com"
+    ,"user2@fakemail.com"
+    ,"user3@fakemail.com"
+    ,"user4@fakemail.com"
+    ,"user5@fakemail.com"
+    ,"dmitrii4212@mail.ru"
+    ,"evseeva_19711@mail.ru"
+    ,"polina.evseeva.1990@mail.ru"
+    ,"maksim.ignatov.83@mail.ru"
+    ,"ignat_petrov_2013@mail.ru"
+    ,"marina_andreeva_922@mail.ru"
+    ,"mitina_19955@mail.ru"
+    ,"murkina1964@mail.ru"
+    ,"andrej.petrov.19922@mail.ru"
+    ,"m.igrov@mail.ru"
+    ,"alexplusa@mail.ru"
+    ,"pipets_oksana@mail.ru"
+    ,"olga.yurkina.86@mail.ru"
+    ,"olenika.amosova.91@mail.ru"
+    ,"skidkikirov@bk.ru"
+    ,"elenia96@mail.ru"
+    ,"aleks9ff11f@yandex.ru"
+    ,"mareniins@yandex.ru"
+    ,"chahina1910@mail.ru"
+    ,"oih@mail.ru"
+    ,"iriska@mail.ru"
+    ,"anna@yagrex.ru"
+    ,"kokos@mail.ru"
+    ,"miss_lady_in_red@mail.ru"
+    ,"ercrus@bk.ru"
+    ,"able13091986@rambler.ru"
+    ,"qwe@qweqwe.com"
+    ,"1234@1234.com"
+    ,"qwe@ewq.com"
+  );
 	
+  
+  
 	$letter = new GearMan();
 	$contento = $letter -> CreateLetter($typo_db_host, $typo_db_username, $typo_db_password, $typo_db, $TYPO3_CONF_VARS['SYS']['sitename'], $domain, $superTheme);
 	foreach ( $mails as $key => $value ) {
-		$creator = new GearMan();
-		$creator -> GearmanCronSendClient(
-			$TYPO3_CONF_VARS['SYS']['sitename'],
-			$TYPO3_CONF_VARS['MAIL']['transport_smtp_username'],
-			$TYPO3_CONF_VARS['MAIL']['transport_smtp_password'],
-			$value,
-			$contento,
-			$superTheme
-		);
+    if (in_array($value, $neversendout)) {
+      break;
+    } else {
+      $creator = new GearMan();
+      $creator -> GearmanCronSendClient(
+        $TYPO3_CONF_VARS['SYS']['sitename'],
+        $TYPO3_CONF_VARS['MAIL']['transport_smtp_username'],
+        $TYPO3_CONF_VARS['MAIL']['transport_smtp_password'],
+        $value,
+        $contento,
+        $superTheme
+      );
+    }
 	}
 	break;
 	
@@ -575,7 +642,7 @@ case "GetHeadMenu":
         $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales_yola'] . $aM['doska'] . $aM['gifts_red'] . $aM['afisha'] . $aM['konkurs'];break;
         
         case "kirov":
-        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['doska'] . $aM['gifts_red'] . $aM['konkurs'] . $aM['afisha'];break;
+        $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales_yola'] . $aM['doska'] . $aM['gifts_red'] . $aM['konkurs'] . $aM['afisha'];break;
         
         case "astrachan":
         $result = $aM['tc'] . $aM['map'] . $aM['news'] . $aM['allSales'] . $aM['gifts_red'] . $aM['doska'] . $aM['afisha'] . $aM['konkurs'];break;
