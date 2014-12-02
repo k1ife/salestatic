@@ -92,11 +92,13 @@ class GearMan {
 				$bgcolor = '#fcfcfc';
 			}
 				
-			/*foreach ( $icons as $key => $value ) {
+			foreach ( $icons as $key => $value ) {
 				if ( preg_match("/".$key."/", $Mvalue['link']) ) {
 					$iconImg = $value;
-				}
-			}*/
+				} else {
+          $iconImg = $icons['razvlechenija'];
+        }
+			}
 			foreach ( $borderColors as $key => $value ) {
 				if ( preg_match("/".$key."/", $Mvalue['link']) ) {
 					$btop = $value;

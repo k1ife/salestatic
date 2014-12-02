@@ -704,31 +704,31 @@ case "GetFooterMenu":
         
         switch ($url[1]) {
             case "yola":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['otzyvi'] . $aM['rss'] . $aM['vk_yola'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['otzyvi'] . $aM['rss'] . $aM['vk_yola'];break;
             
             case "kirov":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['links'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['links'] . $aM['rss'];break;
             
             case "astrachan":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_ast'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_ast'] . $aM['rss'];break;
             
             case "kemerovo":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users_km'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users_km'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
             
             case "chita":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['links'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['links'] . $aM['rss'];break;
             
             case "irkutsk":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk'] . $aM['rss'];break;
             
             case "saratov":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_sarat'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_sarat'] . $aM['rss'];break;
             
             case "sakhalin":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_sakh'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_sakh'] . $aM['rss'];break;
             
             case "yakutsk":
-            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] . $aM['users'] . $aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_ykt'] . $aM['rss'];break;
+            $result = $aM['about_us'] . $aM['contacts'] . $aM['advert'] ./* $aM['users'] . */$aM['main'] . $aM['sms'] . $aM['sitemap'] . $aM['vk_ykt'] . $aM['rss'];break;
             }
             
         echo $_GET['callback']."(".json_fix_cyr(json_encode($result)).");";
